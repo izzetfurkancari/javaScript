@@ -1,0 +1,22 @@
+body {
+    background: black;
+}
+
+.clock {
+    color: #17D4FE;
+    font-size: 60px;
+    font-family: Orbitron;
+    letter-spacing: 7px;    
+}
+/* .text1 {
+    color : #E67E22;
+    font-size: larger;
+} */
+.rounded {
+    margin-top: 70px;
+}
+.text2 {
+    color : #E67E22;
+    font-size:larger;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
