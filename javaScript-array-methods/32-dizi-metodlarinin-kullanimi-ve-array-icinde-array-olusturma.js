@@ -208,7 +208,7 @@ function indirgeyici (akumulator, sayi) {
 }
 
 
-const sonuca1 = sayilardir.reduce(indirgeyici,0); // Bu fonksiyonu ve toplamaya 0'dan başlayacağımızı belirten 0 sayısını metodumuza parametre olarak girelim ve sonucu bir değişkende tutalım:
+const sonuca1 = sayilardir.reduce(indirgeyici,0); // Bu fonksiyonu ve toplamaya 0'dan başlayacağımızı belirten 0 sayısını a metodumuza parametre olarak girelim ve sonucu bir değişkende tutalım:
 
 console.log(sonuca1); //0 + 10 + 20 + 30 = 60 olacağından çıktı olarak 60 bekleriz.
 
