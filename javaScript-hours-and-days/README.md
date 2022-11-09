@@ -1,2 +1,1 @@
-# JS odev 1
-javaScript saat ve gun kodluyoruz odevi
+# JS Digital Clock and Weeks
