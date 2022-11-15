@@ -1,0 +1,30 @@
+/***************************** to do list *******************************/
+
+#liveToastBtn {
+    width: 230px;
+    height:38px ;
+    text-align:center;
+    margin-left: -30px;
+
+}
+
+.imgOfKodluyoruz {
+    margin-left: 333px;
+    color: aliceblue;
+} 
+
+.brwn  {
+    background-image: url(./todoimg/gray-dots-full.png);
+    width:50px;
+}
+
+.wht {
+    background-image: url(./todoimg/asddsasda.png);
+}
+
+.active:hover {
+    text-decoration:line-through;
+}
+/* #task {
+
+} */
