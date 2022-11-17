@@ -42,7 +42,7 @@ const menu = [
     price: 12.99,
     img:
       "https://salu-salo.com/wp-content/uploads/2013/02/Yangzhou-Fried-Rice1.jpg",
-    desc: `Yangzhou style fried rice, serving with bean and pickles `,
+    desc: `Yangzhou style fried rice, serving with bean and pickles`,
   }, 
   {
     id: 6,
