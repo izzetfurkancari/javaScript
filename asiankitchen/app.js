@@ -157,16 +157,16 @@ const menu = [
 
 
 // CATEGORİES ARRAY (reduce method)
-  let grup = 'category'
-  sorting = menu.reduce((acc, menuElemanı) => {
-  let key = menuElemanı[grup]
+    let grup = 'category'
+    sorting = menu.reduce((acc, menuElemanı) => {
+    let key = menuElemanı[grup]
 
-  if(!acc[key]){
-  acc[key] = []
-  }
-  acc[key].push(menuElemanı)
-  return acc
-  }, {})
+    if(!acc[key]){
+    acc[key] = []
+    }
+    acc[key].push(menuElemanı)
+    return acc
+    }, {})
 
 
 
