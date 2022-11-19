@@ -28,7 +28,7 @@ const menu = [
   },
   {
     id: 4,
-    title: "Dan Dan Mian", 
+    title: "Dan Dan Mian",
     category: "China",
     price: 5.99,
     img:
@@ -43,7 +43,7 @@ const menu = [
     img:
       "https://salu-salo.com/wp-content/uploads/2013/02/Yangzhou-Fried-Rice1.jpg",
     desc: `Yangzhou style fried rice, serving with bean and pickles `,
-  }, 
+  },
   {
     id: 6,
     title: "Onigiri",
@@ -81,3 +81,111 @@ const menu = [
     desc: `Red bean paste dessert, serving with honey.`,
   },
 ];
+
+
+
+
+// BUTTONS
+
+  let buttonDOM = document.querySelector('.btn-container');
+  let buttonArray = ['All', 'Korea', 'Japan', 'China'];
+
+  buttonArray.forEach((currentValue,index) => {
+  let buttons = document.createElement('button') 
+  buttons.id = currentValue
+  buttons.innerText = currentValue
+  buttons.classList = 'btn-item btn btn-outline-dark d-inline'
+  
+  const buttonsLocation = document.querySelector(".btn-container")
+  buttonsLocation.appendChild(buttons)
+    
+  });
+
+// BUTTONS CLİCK
+  let allBtn = document.querySelector('#All')
+  let koreaBtn = document.querySelector('#Korea')
+  let japanBtn = document.querySelector('#Japan')
+  let chınaBtn = document.querySelector('#China')
+
+
+  allBtn.addEventListener('click', click)
+  koreaBtn.addEventListener('click', click)
+  japanBtn.addEventListener('click', click)
+  chınaBtn.addEventListener('click', click)
+
+
+
+// ALL MENU FUNCTİON
+  function array(arrayName){
+      arrayName.map(index => {
+      let menuDOM = document.querySelector('.section-center');
+
+      let divGeneral = document.createElement('div');
+      divGeneral.classList = 'menu-items col-6  ';
+      menuDOM.appendChild(divGeneral);
+
+      let img = document.createElement('img');
+      img.classList = 'photo';
+      img.src =index.img;
+      divGeneral.appendChild(img);
+
+      let divİnfo = document.createElement('div');
+      divİnfo.classList = 'menu-info';
+      divGeneral.appendChild(divİnfo);
+
+
+      let divTittle = document.createElement('div');
+      divTittle.classList = 'menu-title';
+      divİnfo.appendChild(divTittle);
+
+      let tittle = document.createElement('h4');
+      let price = document.createElement('h4');
+      tittle.innerHTML = index.title;
+
+      price.classList = 'price';
+      price.innerHTML= index.price;
+      divTittle.appendChild(tittle);
+      divTittle.appendChild(price);
+
+      let divText = document.createElement('div');
+      divText.classList = 'menu-text';
+      divText.innerHTML = index.desc;
+      divİnfo.appendChild(divText);
+    })
+  }
+    
+
+
+// CATEGORİES ARRAY (reduce method)
+  let grup = 'category'
+  sorting = menu.reduce((acc, menuElemanı) => {
+  let key = menuElemanı[grup]
+
+  if(!acc[key]){
+  acc[key] = []
+  }
+  acc[key].push(menuElemanı)
+  return acc
+  }, {})
+
+
+
+
+// BUTTONS CLİCK FUNCTİON
+
+    let body = document.querySelector('.section-center')
+    function click(){
+      while(body.hasChildNodes()){
+        body.removeChild(body.firstChild)
+      }
+      ;
+      if(this.id == 'All'){
+        array(menu)
+      }else if (this.id == 'Korea'){
+        array(sorting.Korea)
+      }else if(this.id == 'Japan'){
+        array(sorting.Japan)
+      }else if(this.id == 'China'){
+        array(sorting.China)
+      }
+    }
