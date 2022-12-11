@@ -16,7 +16,7 @@ function displayWord() {
         ${selectedWord.split('').map(letter => `
             <div class="letter">
                 ${correctLetters.includes(letter) ? letter: ''}
-            </div>
+            </div>s
         `).join('')}
     
     `;
