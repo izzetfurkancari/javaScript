@@ -56,5 +56,30 @@
   <audio data-key="74" src="sounds/snare.wav"></audio>
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
+
+  <script>
+    
+    function playSound(e)
+    {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    key.classList.add('playing');
+    console.log(audio);
+    if(!audio) return; //stop the function from running
+    audio.currentTime=0; //this is going to rewind it to the start in case it is already playing
+    audio.play();
+}
+
+    function removeTransition(e)
+    {
+        //since transform property takes the longest time, we consider it's ending as the ending of all transitions
+        if(e.propertyName!='transform') return;
+        this.classList.remove('playing');
+    }
+    
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key=>key.addEventListener('transitionend',removeTransition));
+    window.addEventListener('keydown',playSound);
+</script>
 </body>
 </html>
