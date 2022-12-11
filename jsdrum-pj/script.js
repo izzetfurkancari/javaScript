@@ -1,0 +1,1 @@
+const sKey = document.querySelector("key")
